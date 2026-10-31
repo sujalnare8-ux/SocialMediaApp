@@ -27,3 +27,17 @@ ASP.NET Core Web API, React (Vite), EF Core, SQL Server, Azure Blob Storage, Sig
 2. API: cd SocialMediaApp.Api, then dotnet ef database update, then dotnet run
 3. React: cd socialmediaapp-client, then npm install, then npm run dev
 4. Open http://localhost:5173
+## Screenshots
+![Feed](docs/feed.png)
+![Profile](docs/profile.png)
+![Chat](docs/chat.png)
+
+## Architecture
+```mermaid
+flowchart LR
+    A[React app] -->|REST + JWT| B[ASP.NET Core API]
+    A -->|WebSocket| C[SignalR ChatHub]
+    B --> D[(SQL Server)]
+    C --> D
+    B --> E[Azure Blob Storage]
+```
