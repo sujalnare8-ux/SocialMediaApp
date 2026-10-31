@@ -13,6 +13,7 @@ A full-stack social media app with real-time chat, built to showcase scalability
 - Real-time chat (SignalR)
 - Logging and health monitoring (Serilog, /health endpoint)
 - CI with GitHub Actions
+- Automated tests (xUnit) run on every push via GitHub Actions
 
 ## Tech Stack
 ASP.NET Core Web API, React (Vite), EF Core, SQL Server, Azure Blob Storage, SignalR, Serilog

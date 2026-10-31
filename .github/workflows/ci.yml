@@ -42,3 +42,6 @@ jobs:
       - name: Build
         run: npm run build
         working-directory: socialmediaapp-client
+
+      - name: Test
+        run: dotnet test SocialMediaApp.Tests/SocialMediaApp.Tests.csproj --configuration Release
