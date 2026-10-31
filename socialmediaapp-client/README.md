@@ -1,3 +1,4 @@
+![CI](https://github.com/sujalnare8-ux/SocialMediaApp./actions/workflows/ci.yml/badge.svg)
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
