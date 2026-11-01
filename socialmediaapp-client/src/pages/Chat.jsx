@@ -28,8 +28,7 @@ export default function Chat() {
   // Connect to the SignalR hub once
   useEffect(() => {
     const conn = new HubConnectionBuilder()
-      .withUrl("http://localhost:5165/hubs/chat", {
-        accessTokenFactory: () => localStorage.getItem("token"),
+      .withUrl(`${import.meta.env.VITE_API_URL ?? "http://localhost:5165"}/hubs/chat`, {        accessTokenFactory: () => localStorage.getItem("token"),
       })
       .withAutomaticReconnect()
       .build();

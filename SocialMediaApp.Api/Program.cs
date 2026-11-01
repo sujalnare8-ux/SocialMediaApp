@@ -78,11 +78,15 @@ builder.Services.AddSignalR();
 // 6. Health check (uptime)
 builder.Services.AddHealthChecks();
 
-// 7. Allow the React app to call this API
+// 7. Allow the React app to call this API (sites come from settings)
+var allowedOrigins = builder.Configuration
+    .GetSection("Cors:AllowedOrigins").Get<string[]>()
+    ?? new[] { "http://localhost:5173" };
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactApp", policy =>
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins(allowedOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials());
